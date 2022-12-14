@@ -1,9 +1,7 @@
-
-
 const technical_skills = document.getElementById('technical_skills')
 const technical_skills_content = technical_skills.childNodes[3].childNodes[1]
-
-
+const email = document.getElementById('email')
+const emailAddress = document.getElementById('email_address')
 const technical_skill = () =>{
 
     const beamlak_skills = {
@@ -41,4 +39,17 @@ const technical_skill = () =>{
     return
 }
 
+const copy_to_clipboard = () =>{
+    email.onclick = () =>{
+        navigator.clipboard.writeText(emailAddress.textContent)
+        emailAddress.textContent = 'my email address copied to your clip board'
+
+        setTimeout(()=>{
+            emailAddress.textContent = 'thecmboy930@gmail.com'
+        },1500)
+    }
+}
+
+
 technical_skill()
+copy_to_clipboard()

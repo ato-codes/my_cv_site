@@ -19,6 +19,55 @@
     margin: 0;
 }
 
+#tooltip{
+    position: relative;
+    display: inline-block;
+    
+    .tooltiptext{
+        visibility: hidden;
+        width: 200px;
+        bottom: 100%;
+        right: 100%;
+        // margin-left: -60px;
+        background-color: var(--white);
+        color: var(--dark);
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+#tooltip:hover{
+    .tooltiptext{
+        visibility: visible;
+    }
+}
+
+#socail_media{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 1vh;
+    right: 2vw;
+    z-index: 1;
+
+    a{
+        color: var(--white);
+        transition: 1s;
+        cursor: default;
+        margin-bottom: 1vh;
+    }
+
+    a:hover{
+        color: var(--light);
+    }
+    
+}
+
 body{
     width: 100vw;
     height: 100vh;
@@ -48,6 +97,7 @@ body{
             align-items: center;
             justify-content: center;
             transition: 1s;
+            z-index: 1;
     
             img{
                 width: 80%;
@@ -60,7 +110,7 @@ body{
 
         #container:hover{
             background-color: unset;
-            box-shadow:  1px 1px 10px var(--white) inset;
+            box-shadow:  1px 1px 2px var(--white) inset;
         }
     
         #name-amh{
@@ -69,6 +119,7 @@ body{
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 1;
     
             p{
                 color: var(--white);
@@ -93,7 +144,11 @@ body{
         top: 0;
 
         #name_address{
-            display: none;
+            // display: none;
+            #name, #i_am, #my_phone_number{
+                display: none;
+            }
+
         }
     
         #container_img{
@@ -119,6 +174,7 @@ body{
         display: grid;
         grid-template-rows: 15% 85%;
         grid-template-columns: 100%;
+        // z-index: 1;
 
         #name-eng{
             font-weight: bold;
@@ -245,7 +301,16 @@ body{
    ::-webkit-scrollbar-thumb{
         background-color: var(--white);
    }
+   #socail_media{
+    flex-direction: row;
+    width: 20vw;
+    right: unset;
+    left: 7vw;
+    }
 
+    .mobile{
+        display: none;
+    }
     body{
         grid-template-columns: 5vw 25vw 65vw;
         grid-template-areas: 'option img desc';
@@ -265,6 +330,7 @@ body{
             grid-area: img;
             position: relative;
             width: 100%;
+            z-index: -1;
             #name_address{
                 display: flex;
                 flex-direction: column;
@@ -272,13 +338,23 @@ body{
                 z-index: 1;
                 bottom: 0;
                 width: 100%;
+                height: 15%;
                 text-align: center;
+                align-items: center;
+                justify-content: flex-start;
+
+                #name, #i_am, #my_phone_number{
+                    display: block;
+                }
+                
                 h1,span{
                     margin: 0;
                 }
+
                 h1{
                     font-size: 1.5em;
                 }
+
                 span{
                     font-size: .7em;
                 }

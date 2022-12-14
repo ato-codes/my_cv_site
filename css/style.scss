@@ -334,6 +334,7 @@ body{
             #name_address{
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
                 position: absolute;
                 z-index: 1;
                 bottom: 0;
@@ -341,8 +342,8 @@ body{
                 height: 15%;
                 text-align: center;
                 align-items: center;
-                justify-content: flex-start;
-
+                margin-bottom: 10px;
+                
                 #name, #i_am, #my_phone_number{
                     display: block;
                 }

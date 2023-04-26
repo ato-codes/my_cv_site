@@ -3,6 +3,7 @@
   --light: #9499a0;
   --white: #ffffff;
   --black-shadow: rgba(0, 0, 0, 0.156);
+  --light-shadow: rgba(39, 39, 39, 0.329);
 }
 
 @font-face {
@@ -16,6 +17,10 @@
 #address {
   color: var(--light);
   margin: 0;
+}
+
+#PersonalTelegram {
+  color: var(--light);
 }
 
 #tooltip {
@@ -111,8 +116,7 @@ body #left_bar #name-amh p {
   color: var(--white);
   margin: 0;
   padding: 0;
-  -ms-writing-mode: tb-lr;
-      writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
   font-size: 2rem;
   opacity: 40%;
   transform: rotate(180deg);
@@ -172,13 +176,14 @@ body #right_elements #descriptions .description #contents p {
   width: 95%;
 }
 body #right_elements #descriptions .description #contents #cards {
-  display: grid;
-  grid-template-columns: repeat(2, 60%);
-  grid-template-rows: 100%;
+  display: flex;
+  flex-wrap: wrap;
   overflow-x: auto;
+  max-height: 300px;
 }
 body #right_elements #descriptions .description #contents #cards .card {
   margin-right: 10%;
+  max-width: 250px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -193,11 +198,20 @@ body #right_elements #descriptions .description #contents #cards .card .item_tit
   color: var(--light);
   transition: 1s;
 }
+body #right_elements #descriptions .description #contents #cards .even {
+  background-color: var(--light);
+}
+body #right_elements #descriptions .description #contents #cards .even .item_title {
+  color: var(--dark);
+}
 body #right_elements #descriptions .description #contents #cards .card:hover {
   box-shadow: 5px 5px 10px var(--black-shadow) inset;
 }
 body #right_elements #descriptions .description #contents #cards .card:hover .item_title {
   text-decoration: underline;
+}
+body #right_elements #descriptions .description #contents #cards .even:hover {
+  box-shadow: 5px 5px 10px var(--light-shadow) inset;
 }
 body #right_elements #descriptions .description #contents #bars {
   margin-top: 30px;
@@ -209,6 +223,7 @@ body #right_elements #descriptions .description #contents #bars .item {
   grid-template-rows: 100%;
   align-items: center;
   margin-bottom: 10px;
+  border-bottom: 1px solid var(--light);
 }
 body #right_elements #descriptions .description #contents #bars .item .item_title {
   font-size: 0.9rem;

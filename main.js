@@ -19,6 +19,7 @@ const technical_skill = () =>{
         Algorithms : 2,
         'BackEnd' : 3,
         'Computer Software Maintainance' : 4,
+        'Flutter Dart':2
     }
     
     for(let skill in beamlak_skills){
@@ -58,7 +59,7 @@ const Myservice = () =>{
         },
         {
             title : 'Operating System Maintainance',
-            content : 'Operating System Issues Like Re installing windows With Basic Software Installision service Based Your Work Preferance'
+            content : 'Operating System Issues Like Re installing windows With Basic Software Installision and System Work Environemnt Setup service Based Your Work Preferance'
         }
     ]
     for(let i = 0; i<= services.length - 1; i++){
